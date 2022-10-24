@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link href="assets/owl.carousel.min.css" rel="stylesheet"/>
+    <link href="assets/owl.theme.default.min.css" rel="stylesheet"/>
+    <style>
+        .owl-prev{
+            left: -30px;
+        }
+        .owl-next{
+            right: -30px;
+        }
+        .owl-prev, .owl-next{
+            position: absolute;
+            top: 30%;
+        }
+        .owl-theme .owl-nav .owl-next .owl-prev span{
+            font-size: 60px;
+            color: brown;
+        }
+        .owl-theme .owl-nav [class*="owl-"]:hover{
+            background-color: transparent;
+        }
+        .card{
+            height: 5rem;
+            text-align: center;
+            line-height: 75px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container mt-5 mb-5">
+        <div class="owl-carousel owl-theme" >
+            <div class="item">
+                <div class="card">
+                Sangkar Malang
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                Earth Hour
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                Komunitas B
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                Komunitas C
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                Komunitas D
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <script src="owl.carousel.min.js"></script>
+    <script src="jquery.mousewheel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            autoplay: true,
+            autoplayHoverPause: true,
+            items: 4,
+            nav: true,
+            dots: true,
+            loop: true,
+            lazyLoad: true,
+            margin: 5,
+            stagePadding: 5,
+            responsive: {
+                0:{
+                    items: 1,
+                    dots: false
+                },
+                485:{
+                    items: 2,
+                    dots: false
+                },
+                728:{
+                    items: 3,
+                    dots: true
+                },
+                960:{
+                    items: 4,
+                    dots: true
+                },
+                1200:{
+                    items: 5,
+                    dots: false
+                },
+
+            }
+        }); 
+
+        $('.owl-carousel').on('mousewheel', '.owl-stage', function (e) {
+            if(e.deltav>0){
+                $('.owl-carousel').trigger('next.owl');
+            } else{
+                $('.owl-carousel').trigger('prev.owl');
+            }
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
